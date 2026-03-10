@@ -53,28 +53,23 @@ Rolul tău:
 # ── funcție helper ────────────────────────────────────────────────────────────
 
 def call_agent(agent_name: str, system_prompt: str, user_message: str) -> str:
-    """Apelează Claude cu un system prompt specific și returnează răspunsul."""
+    """Apelează Groq cu un system prompt specific și returnează răspunsul."""
     print(f"\n{'='*60}")
     print(f"  {agent_name}")
     print(f"{'='*60}")
 
     response = client.chat.completions.create(
         messages=[
-            # Set an optional system message. This sets the behavior of the
-            # assistant and can be used to provide specific instructions for
-            # how it should behave throughout the conversation.
             {
                 "role": "system",
                 "content": system_prompt
             },
-            # Set a user message for the assistant to respond to.
             {
                 "role": "user",
                 "content": user_message,
             }
         ],
 
-        # The language model which will generate the completion.
         model=MODEL
     )
 
