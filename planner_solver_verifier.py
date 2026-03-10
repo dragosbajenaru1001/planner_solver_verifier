@@ -1,6 +1,5 @@
 """
 Prompt Chaining: Planner → Solver → Verifier
-Exemplu educativ pentru curs AI - Dragos
 
 Fiecare agent are un rol specializat si primeste
 output-ul agentului anterior ca input (chaining).
