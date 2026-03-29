@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from rich.console import Console
 from rich.panel import Panel
 from rich.markdown import Markdown
+from html_report import generate_html_report
 
 load_dotenv()
 
@@ -121,6 +122,9 @@ def run_chain(problem: str) -> dict:
     print(f"\n{'='*60}")
     print("  🏁 LANȚ COMPLET")
     print(f"{'='*60}\n")
+
+    report_path = generate_html_report(problem, plan, solution, verdict)
+    print(f"📄 Raport HTML salvat: {report_path}")
 
     return {"plan": plan, "solution": solution, "verdict": verdict}
 
